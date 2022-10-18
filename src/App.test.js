@@ -73,7 +73,7 @@ test('after the button clicked, all the inputs values are get corretly', () => {
   expect(cityInputTyped).toHaveTextContent("São Paulo");
 })
 
-test('the message element shows corretly after the button was clicked', () => {
+test('the article element don`t shows in the first time', () => {
   render(<App />);
 
   const buttonSubmit = screen.queryByRole("button", {name: "Create"})
@@ -84,10 +84,10 @@ test('the message element shows corretly after the button was clicked', () => {
   }))
 
   const messageElement = screen.queryByRole("article");
-  expect(messageElement).toBeInTheDocument();
+  expect(messageElement).not.toBeInTheDocument();
 })
 
-test('the error message element shows corretly after the validation', () => {
+test('the error message element shows corretly', () => {
   render(<App />);
 
   const buttonSubmit = screen.queryByRole("button", {name: "Create"})
